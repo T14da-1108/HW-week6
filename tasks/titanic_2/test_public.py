@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 from pandas.testing import assert_series_equal
 
-from tools.testlib import testlib
+import testlib
 from .titanic_2 import class_distribution, families_count
 
 FILE_PATH = Path(__file__).parent / 'titanic.csv'

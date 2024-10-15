@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from tools.testlib import testlib
+import testlib
 from .titanic_3 import mean_price, max_size_group
 
 FILE_PATH = Path(__file__).parent / 'titanic.csv'

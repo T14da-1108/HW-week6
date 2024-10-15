@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from tools.testlib import testlib
+import testlib
 from .titanic_4 import dead_lucky
 
 FILE_PATH = Path(__file__).parent / 'titanic.csv'

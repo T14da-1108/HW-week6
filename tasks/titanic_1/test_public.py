@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from tools.testlib import testlib
+import testlib
 from .titanic_1 import male_age, nan_columns
 
 FILE_PATH = Path(__file__).parent / 'titanic.csv'
