@@ -11,14 +11,9 @@ def male_age(df: pd.DataFrame) -> float:
     :return: Mean age of the filtered group
     """
     return (
-        df.loc[
-            df.apply(lambda row: (row["Survived"] == 1) and
-                                 (row["Sex"] == "male") and
-                                 (row["Embarked"] == "S") and
-                                 (row["Fare"] > 30) and
-                                 (pd.notna(row["Age"])), axis=1),
-            "Age"
-        ]
+        df.query(
+            'Survived == 1 and Sex == "male" and Embarked == "S" and Fare > 30 and Age == Age'
+        )['Age']
         .mean()
     )
 
