@@ -17,7 +17,7 @@ def male_age(df: pd.DataFrame) -> float:
             (df["Embarked"] == "S") &
             (df["Fare"] > 30) &
             (df["Age"].notna()),  # Filter out rows where Age is NaN
-            "Age",
+            "Age"
         ]
         .mean()
     )
