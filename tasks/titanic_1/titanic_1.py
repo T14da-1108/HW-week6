@@ -12,13 +12,11 @@ def male_age(df: pd.DataFrame) -> float:
     """
     return (
         df.loc[
-            (
-                    (df["Survived"] == 1) &
-                    (df["Sex"] == "male") &
-                    (df["Embarked"] == "S") &
-                    (df["Fare"] > 30) &
-                    (df["Age"].notna())
-            ),
+            df.apply(lambda row: (row["Survived"] == 1) and
+                                 (row["Sex"] == "male") and
+                                 (row["Embarked"] == "S") and
+                                 (row["Fare"] > 30) and
+                                 (pd.notna(row["Age"])), axis=1),
             "Age"
         ]
         .mean()
